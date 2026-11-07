@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>翻訳 | PLaMo Translate</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/vendor/dads/global.css">
+  <link rel="stylesheet" href="/vendor/dads/button.css">
+  <link rel="stylesheet" href="/vendor/dads/textarea.css">
+  <link rel="stylesheet" href="/vendor/dads/select.css">
+  <link rel="stylesheet" href="/vendor/dads/form-control-label.css">
+  <link rel="stylesheet" href="/app.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="brand">PLaMo Translate</span>
+      <span class="local-status">この端末で処理</span>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <h1 class="dads-u-std-32B-150">テキスト翻訳</h1>
+    <form id="translate-form">
+      <div class="toolbar">
+        <div class="dads-form-control-label" data-size="md">
+          <label class="dads-form-control-label__label" for="target">翻訳先</label>
+          <div class="dads-form-control-label__field">
+            <span class="dads-select">
+              <span class="dads-select__control">
+                <select id="target" name="target" class="dads-select__select" data-size="md">
+                  <option value="en">英語</option>
+                  <option value="ja">日本語</option>
+                </select>
+                <svg class="dads-select__chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 17L3 8L4 7L12 15L20 7L21 8L12 17Z" fill="currentColor"/></svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="panels">
+        <div class="source-panel dads-form-control-label" data-size="lg">
+          <div class="panel-heading">
+            <label class="dads-form-control-label__label" for="source">原文</label>
+            <button id="clear" type="button" class="dads-button" data-type="text" data-size="sm">消去</button>
+          </div>
+          <div class="dads-form-control-label__field">
+            <span class="dads-textarea">
+              <textarea id="source" name="source" class="dads-textarea__textarea" rows="12" required aria-describedby="count input-error" dir="auto" spellcheck="false"></textarea>
+            </span>
+            <div class="source-meta">
+              <p id="input-error" class="dads-textarea__error-text" hidden></p>
+              <span id="count" class="character-count">0 / 12,000文字</span>
+            </div>
+            <div class="actions">
+              <button id="submit" type="submit" class="dads-button" data-type="solid-fill" data-size="lg">翻訳する</button>
+              <button id="cancel" type="button" class="dads-button" data-type="outline" data-size="lg" hidden>中止</button>
+              <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+            </div>
+          </div>
+        </div>
+        <section class="result-panel">
+          <div class="panel-heading">
+            <h2 id="result-heading" class="dads-u-std-18B-160">訳文</h2>
+            <button id="copy" type="button" class="dads-button" data-type="text" data-size="sm" disabled>コピー</button>
+          </div>
+          <div id="result" class="translation" dir="auto" tabindex="0" role="region" aria-labelledby="result-heading"></div>
+        </section>
+      </div>
+      <p id="error" class="notice error" role="alert" hidden></p>
+      <p id="warning" class="notice warning" role="alert" hidden></p>
+    </form>
+    <noscript><p class="notice error">翻訳するにはJavaScriptを有効にしてください。</p></noscript>
+  </main>
+  <footer>
+    <span>PLaMo 3 Translate 0.8B</span>
+    <span>入力内容は保存せず、外部サービスに送信しません。</span>
+  </footer>
+</body>
+</html>

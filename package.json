@@ -1,0 +1,14 @@
+{
+  "name": "plamo-local-translate",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "web": "swift build -c release && bun run web/server.ts",
+    "test:web": "bun test web/server.test.ts",
+    "test:browser": "bun run web/check-browser.ts"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.65.0"
+  }
+}
